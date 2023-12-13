@@ -6,23 +6,21 @@
   font-family: "Poppins", sans-serif;
 }
 :root {
-  --light: #d3d6db;
+  --light: #808080;
   --dark: #3a4750;
   --maroon: #be3144;
+  --blue: #5f5dbd;
 }
 
 body {
   background: url("./assets/images/header1.jpg"),
     linear-gradient(-10deg, #eaf6f6 10%, #fcfefe 20%);
-  background-size: auto 30vh, auto;
+  background-size: auto 30%, auto;
   background-position: top, center;
-  background-repeat: repeat-x, no-repeat;
-  height: 100vh;
-}
-
-.header {
+  background-repeat: repeat-x, repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
 }
