@@ -10,3 +10,23 @@
   --dark: #3a4750;
   --maroon: #be3144;
 }
+
+body {
+  background: url("./assets/images/header.jpg"),
+    radial-gradient(
+      circle at 10% 20%,
+      rgba(216, 241, 230, 0.46) 0.1%,
+      rgba(233, 226, 226, 0.28) 90.1%
+    );
+  background-size: auto 30vh, auto;
+  background-position: top, center;
+  background-repeat: repeat-x, no-repeat;
+  height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
