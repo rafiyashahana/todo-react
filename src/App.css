@@ -12,12 +12,8 @@
 }
 
 body {
-  background: url("./assets/images/header.jpg"),
-    radial-gradient(
-      circle at 10% 20%,
-      rgba(216, 241, 230, 0.46) 0.1%,
-      rgba(233, 226, 226, 0.28) 90.1%
-    );
+  background: url("./assets/images/header1.jpg"),
+    linear-gradient(-10deg, #eaf6f6 10%, #fcfefe 20%);
   background-size: auto 30vh, auto;
   background-position: top, center;
   background-repeat: repeat-x, no-repeat;
