@@ -1,0 +1,34 @@
+@import "../../App.css";
+.task-input {
+  position: relative;
+  display: flex;
+}
+
+.task-input input {
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  box-shadow: 5px 5px 13px rgba(0, 0, 0, 0.1);
+}
+
+.task-input .bullet {
+  position: absolute;
+  top: 0.8rem;
+  left: 5%;
+  color: var(--light);
+}
+.task-input .add {
+  position: absolute;
+  top: 0.8rem;
+  left: 85%;
+  font-size: 0.9rem;
+  color: var(--light);
+}
+.task-input .add:hover {
+  cursor: pointer;
+  color: var(--blue);
+  font-weight: 500;
+}

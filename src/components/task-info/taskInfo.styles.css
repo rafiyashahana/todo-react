@@ -1,0 +1,19 @@
+@import "../../App.css";
+.task-info {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  color: var(--light);
+  padding: 1rem;
+  font-weight: 300;
+  font-size: 0.8rem;
+  background: #ffff;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+}
+.task-info span:hover {
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 500;
+}

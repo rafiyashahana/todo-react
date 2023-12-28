@@ -1,0 +1,30 @@
+@import "../../App.css";
+.task-list {
+  overflow: scroll;
+  margin: 1rem 0;
+
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
+  position: absolute;
+  width: 100%;
+  top: 10%;
+  max-height: 390px;
+}
+.task span:first-of-type::before {
+  content: "◌";
+  margin-right: 1rem;
+}
+.task {
+  background-color: #ffff;
+  /* border-bottom: solid var(--light) 0.05rem; */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  color: var(--dark);
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.close:hover {
+  cursor: pointer;
+  color: var(--maroon);
+}
