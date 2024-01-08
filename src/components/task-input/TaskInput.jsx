@@ -8,7 +8,7 @@ const TaskInput = () => {
 
   const handleClick = () => {
     if (!input) return;
-    setTodo([...todo, { name: input, isComplete: false }]);
+    addTodo(input);
     setInput("");
   };
   return (
