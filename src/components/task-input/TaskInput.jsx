@@ -3,7 +3,7 @@ import "./taskInput.styles.css";
 import { TodoContext } from "../../context/todo-context";
 import Task from "../task/Task";
 const TaskInput = () => {
-  const { setTodo, todo, addTodo } = useContext(TodoContext);
+  const { addTodo } = useContext(TodoContext);
   const [input, setInput] = useState("");
 
   const handleClick = () => {
@@ -25,7 +25,7 @@ const TaskInput = () => {
           ADD
         </span>
       </div>
-      {todo && <Task />}
+      <Task />
     </>
   );
 };

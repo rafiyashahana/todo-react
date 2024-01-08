@@ -14,7 +14,17 @@ export const TodoProvider = ({ children }) => {
     console.log(todo);
   };
 
+  const deleteTodo = (removeIndex) => {
+    const filteredList = todo.filter((_, index) => removeIndex !== index);
+    setTodo(filteredList);
+  };
+
   const [isComplete, setIsComplete] = useState(false);
-  const value = { todo, setTodo, isComplete, setIsComplete, addTodo };
+
+  const value = {
+    todo,
+    addTodo,
+    deleteTodo,
+  };
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 };
