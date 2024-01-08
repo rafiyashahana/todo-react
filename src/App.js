@@ -1,11 +1,12 @@
-import TodoContainer from "./components/todo-container/TodoContainer";
+import TodoForm from "./components/todo-form/TodoForm";
 import "./App.css";
+import { TodoProvider } from "./context/todo-context";
 
 function App() {
   return (
-    <div>
-      <TodoContainer />
-    </div>
+    <TodoProvider>
+      <TodoForm />
+    </TodoProvider>
   );
 }
 

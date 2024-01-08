@@ -1,5 +1,5 @@
 @import "../../App.css";
-.task-list {
+.task-container {
   overflow: scroll;
   margin: 1rem 0;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
@@ -9,6 +9,9 @@
   max-height: 390px;
 }
 
+li {
+  list-style: none;
+}
 .task {
   background-color: #ffff;
   /* border-bottom: solid var(--light) 0.05rem; */
@@ -29,7 +32,7 @@
   color: var(--maroon);
 }
 
-.task span:first-child::before {
+.task li::before {
   margin-right: 10px;
   content: "◌";
 }
@@ -38,7 +41,7 @@
   color: var(--light);
   opacity: 0.5;
 }
-.checked span:first-child::before {
+.checked li::before {
   content: "✓";
   margin-right: 10px;
 }
