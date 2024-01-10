@@ -12,7 +12,8 @@
   border-bottom-right-radius: 1rem;
   box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.1);
 }
-.task-info span:hover {
+.task-info span:hover,
+.active {
   color: var(--blue);
   cursor: pointer;
   font-weight: 500;
