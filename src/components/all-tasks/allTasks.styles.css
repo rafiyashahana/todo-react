@@ -1,0 +1,44 @@
+@import "../../App.css";
+
+li {
+  list-style: none;
+}
+.task {
+  background-color: #ffff;
+  /* border-bottom: solid var(--light) 0.05rem; */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  color: var(--dark);
+  font-size: 0.9rem;
+  align-items: center;
+  position: relative;
+}
+
+.task span:last-child {
+  position: absolute;
+  right: 10px;
+}
+.close:hover {
+  cursor: pointer;
+  color: var(--maroon);
+}
+
+.checked .task-name {
+  text-decoration: line-through;
+  color: var(--light);
+  opacity: 0.5;
+}
+.checked::before {
+  content: "✓";
+  margin-right: 10px;
+  color: green;
+  font-weight: 800;
+}
+.task-name {
+  cursor: pointer;
+}
+
+.unchecked::before {
+  margin-right: 10px;
+  content: "◌";
+}

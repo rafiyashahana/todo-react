@@ -1,24 +1,15 @@
 import { useContext, useState } from "react";
 import "./task.styles.css";
+import AllTasks from "../all-tasks/AllTasks";
+import CompletedTasks from "../completed-tasks/CompletedTasks";
 import { TodoContext } from "../../context/todo-context";
 
 const Task = () => {
-  const { todo, deleteTodo, toggleComplete } = useContext(TodoContext);
+  const { completedScreen } = useContext(TodoContext);
 
   return (
     <div className="task-container">
-      {todo.map((item, index) => (
-        <ul key={index} className="task">
-          <li className={!item.isComplete ? "unchecked" : "checked"}>
-            <span className="task-name" onClick={() => toggleComplete(index)}>
-              {item.name}
-            </span>
-            <span className="close" onClick={() => deleteTodo(index)}>
-              ×
-            </span>
-          </li>
-        </ul>
-      ))}
+      {completedScreen == false ? <AllTasks /> : <CompletedTasks />}
     </div>
   );
 };

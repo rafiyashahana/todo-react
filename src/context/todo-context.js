@@ -7,6 +7,8 @@ export const TodoContext = createContext({
 
 export const TodoProvider = ({ children }) => {
   const [todo, setTodo] = useState([]);
+  const [completedTasks, setCompletedTasks] = useState([]);
+  const [completedScreen, setCompletedScreen] = useState(false);
 
   const addTodo = (newItem) => {
     setTodo([...todo, { name: newItem, isComplete: false }]);
@@ -26,11 +28,20 @@ export const TodoProvider = ({ children }) => {
     setTodo(newList);
   };
 
+  const showCompleted = () => {
+    const completed = todo.filter((item) => item.isComplete == true);
+    setCompletedTasks(completed);
+  };
+
   const value = {
     todo,
     addTodo,
     deleteTodo,
     toggleComplete,
+    showCompleted,
+    completedTasks,
+    completedScreen,
+    setCompletedScreen,
   };
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 };

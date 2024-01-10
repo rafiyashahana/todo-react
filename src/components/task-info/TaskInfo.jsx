@@ -2,18 +2,24 @@ import { useContext, useState } from "react";
 import "./taskInfo.styles.css";
 import { TodoContext } from "../../context/todo-context";
 const TaskInfo = () => {
-  const taskInfo = ["All", "Active", "Completed"];
-  // const { isComplete } = useContext(TodoContext);
-  const [active, setActive] = useState(0);
+  const taskInfo = ["All", "Completed"];
+  const { setCompletedScreen, showCompleted } = useContext(TodoContext);
+  const [activeTab, setActiveTab] = useState(0);
   const handleClick = (i) => {
-    setActive(i);
+    setActiveTab(i);
+    if (i === 1) {
+      setCompletedScreen(true);
+      showCompleted();
+    } else {
+      setCompletedScreen(false);
+    }
   };
   return (
     <div className="task-info">
       {taskInfo.map((item, index) => (
         <span
           key={index}
-          className={index === active ? "active" : ""}
+          className={index === activeTab ? "active" : ""}
           onClick={() => handleClick(index)}
         >
           {item}
