@@ -32,16 +32,22 @@ li {
   color: var(--maroon);
 }
 
-.task li::before {
-  margin-right: 10px;
-  content: "◌";
-}
-.checked {
+.checked .task-name {
   text-decoration: line-through;
   color: var(--light);
   opacity: 0.5;
 }
-.checked li::before {
+.checked::before {
   content: "✓";
   margin-right: 10px;
+  color: green;
+  font-weight: 800;
+}
+.task-name {
+  cursor: pointer;
+}
+
+.unchecked::before {
+  margin-right: 10px;
+  content: "◌";
 }

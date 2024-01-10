@@ -3,15 +3,13 @@ import { createContext, useState } from "react";
 export const TodoContext = createContext({
   todo: null,
   setTodo: () => null,
-  isComplete: false,
-  setIsComplete: () => null,
 });
 
 export const TodoProvider = ({ children }) => {
   const [todo, setTodo] = useState([]);
+
   const addTodo = (newItem) => {
-    setTodo([...todo, { name: newItem, isChecked: false }]);
-    console.log(todo);
+    setTodo([...todo, { name: newItem, isComplete: false }]);
   };
 
   const deleteTodo = (removeIndex) => {
@@ -19,12 +17,20 @@ export const TodoProvider = ({ children }) => {
     setTodo(filteredList);
   };
 
-  const [isComplete, setIsComplete] = useState(false);
+  const toggleComplete = (toggleIndex) => {
+    const newList = todo.map((item, i) =>
+      i === toggleIndex
+        ? { ...item, isComplete: !item.isComplete }
+        : { ...item }
+    );
+    setTodo(newList);
+  };
 
   const value = {
     todo,
     addTodo,
     deleteTodo,
+    toggleComplete,
   };
   return <TodoContext.Provider value={value}>{children}</TodoContext.Provider>;
 };
